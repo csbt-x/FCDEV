@@ -1,4 +1,19 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+﻿<mat-toolbar *ngIf="user" color="primary" class="example-toolbar">
+	<img src="../../assets/logos/fraudcheck_logo_240.png"/>
+  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+
+  <app-sidenav *ngIf="user"></app-sidenav>
+
+  <div class="example-sidenav-content">
+      <alert></alert>
+      <router-outlet></router-outlet>
+	</div>
+
+</mat-sidenav-container>
